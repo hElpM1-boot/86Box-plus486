@@ -1099,6 +1099,136 @@ machine_at_r418_init(const machine_t *model)
 }
 
 int
+machine_at_m103_init(const machine_t *model)
+{
+    int ret;
+
+    ret = bios_load_linear("roms/machines/m103/bios.bin",
+                           0x000e0000, 131072, 0);
+
+    if (bios_only || !ret)
+        return ret;
+
+    machine_at_common_init_ex(model, 2);
+
+    machine_at_sis_85c496_common_init(model);
+    device_add(&sis_85c496_device);
+    pci_register_slot(0x0B, PCI_CARD_NORMAL, 1, 2, 3, 4);
+    pci_register_slot(0x0D, PCI_CARD_NORMAL, 2, 3, 4, 1);
+    pci_register_slot(0x0F, PCI_CARD_NORMAL, 3, 4, 1, 2);
+    pci_register_slot(0x07, PCI_CARD_NORMAL, 4, 1, 2, 3);
+
+    device_add(&fdc37c665_device);
+    device_add(&keyboard_ps2_pci_device);
+
+    return ret;
+}
+
+int
+machine_at_pv4t_init(const machine_t *model)
+{
+    int ret;
+
+    ret = bios_load_linear("roms/machines/pv4t/pv4tbios.bin",
+                           0x000e0000, 131072, 0);
+
+    if (bios_only || !ret)
+        return ret;
+
+    machine_at_common_init_ex(model, 2);
+
+    machine_at_sis_85c496_common_init(model);
+    device_add(&sis_85c496_device);
+    pci_register_slot(0x0B, PCI_CARD_NORMAL, 1, 2, 3, 4);
+    pci_register_slot(0x0D, PCI_CARD_NORMAL, 2, 3, 4, 1);
+    pci_register_slot(0x0F, PCI_CARD_NORMAL, 3, 4, 1, 2);
+    pci_register_slot(0x07, PCI_CARD_NORMAL, 4, 1, 2, 3);
+
+    device_add(&fdc37c665_device);
+    device_add(&keyboard_ps2_pci_device);
+
+    return ret;
+}
+
+int
+machine_at_4spi_init(const machine_t *model)
+{
+    int ret;
+
+    ret = bios_load_linear("roms/machines/4spi/4spibios.bin",
+                           0x000e0000, 131072, 0);
+
+    if (bios_only || !ret)
+        return ret;
+
+    machine_at_common_init_ex(model, 2);
+
+    machine_at_sis_85c496_common_init(model);
+    device_add(&sis_85c496_device);
+    pci_register_slot(0x0B, PCI_CARD_NORMAL, 1, 2, 3, 4);
+    pci_register_slot(0x0D, PCI_CARD_NORMAL, 2, 3, 4, 1);
+    pci_register_slot(0x0F, PCI_CARD_NORMAL, 3, 4, 1, 2);
+    pci_register_slot(0x07, PCI_CARD_NORMAL, 4, 1, 2, 3);
+
+    device_add(&fdc37c665_device);
+    device_add(&keyboard_ps2_pci_device);
+
+    return ret;
+}
+
+int
+machine_at_4spm_init(const machine_t *model)
+{
+    int ret;
+
+    ret = bios_load_linear("roms/machines/4spm/4spmbios.bin",
+                           0x000e0000, 131072, 0);
+
+    if (bios_only || !ret)
+        return ret;
+
+    machine_at_common_init_ex(model, 2);
+
+    machine_at_sis_85c496_common_init(model);
+    device_add(&sis_85c496_device);
+    pci_register_slot(0x0B, PCI_CARD_NORMAL, 1, 2, 3, 4);
+    pci_register_slot(0x0D, PCI_CARD_NORMAL, 2, 3, 4, 1);
+    pci_register_slot(0x0F, PCI_CARD_NORMAL, 3, 4, 1, 2);
+    pci_register_slot(0x07, PCI_CARD_NORMAL, 4, 1, 2, 3);
+
+    device_add(&fdc37c665_device);
+    device_add(&keyboard_ps2_pci_device);
+
+    return ret;
+}
+
+int
+machine_at_m104_init(const machine_t *model)
+{
+    int ret;
+
+    ret = bios_load_linear("roms/machines/m104/bios.bin",
+                           0x000e0000, 131072, 0);
+
+    if (bios_only || !ret)
+        return ret;
+
+    machine_at_common_init_ex(model, 2);
+
+    machine_at_sis_85c496_common_init(model);
+    device_add(&sis_85c496_device);
+    pci_register_slot(0x0B, PCI_CARD_NORMAL, 1, 2, 3, 4);
+    pci_register_slot(0x0D, PCI_CARD_NORMAL, 2, 3, 4, 1);
+    pci_register_slot(0x0F, PCI_CARD_NORMAL, 3, 4, 1, 2);
+    pci_register_slot(0x07, PCI_CARD_NORMAL, 4, 1, 2, 3);
+
+    device_add(&fdc37c665_device);
+    device_add(&keyboard_ps2_pci_device);
+
+    return ret;
+}
+
+int
 machine_at_m4li_init(const machine_t *model)
 {
     int ret;
