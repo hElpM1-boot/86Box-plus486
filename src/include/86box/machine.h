@@ -570,6 +570,11 @@ extern int machine_at_greenb_init(const machine_t *);
 extern int machine_at_4gpv5_init(const machine_t *);
 
 extern int machine_at_r418_init(const machine_t *);
+extern int machine_at_m103_init(const machine_t *);
+extern int machine_at_4spi_init(const machine_t *);
+extern int machine_at_4spm_init(const machine_t *);
+extern int machine_at_m104_init(const machine_t *);
+extern int machine_at_pv4t_init(const machine_t *);
 extern int machine_at_ls486e_init(const machine_t *);
 extern int machine_at_4dps_init(const machine_t *);
 extern int machine_at_ms4144_init(const machine_t *);
